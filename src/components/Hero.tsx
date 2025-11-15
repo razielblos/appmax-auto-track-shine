@@ -1,127 +1,73 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { Play, CheckCircle2 } from "lucide-react";
+import mockup from "@/assets/mockup.png";
+import badges from "@/assets/badges.png";
 
 export const Hero = () => {
   return (
-    <section className="relative min-h-[90vh] bg-gradient-to-br from-purple-50 via-purple-100 to-appmax-purple-dark overflow-hidden">
-      {/* Grafismo de fundo */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 left-10 w-64 h-64 border border-primary rounded-full animate-pulse" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 border border-primary rounded-full animate-pulse delay-700" />
-      </div>
+    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-purple-50 via-background to-purple-100">
+      {/* Decorative elements */}
+      <div className="absolute top-20 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-appmax-purple-medium/5 rounded-full blur-3xl animate-pulse delay-1000" />
       
-      <div className="container mx-auto px-4 py-16 lg:py-24 relative z-10">
+      <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Conteúdo */}
-          <div className="space-y-8 text-center lg:text-left">
-            <div className="inline-block px-4 py-2 bg-primary/10 rounded-full border border-primary/20">
-              <span className="text-sm font-semibold text-appmax-purple-dark uppercase tracking-wide">
-                Novo: Rastreio Automático
+          {/* Left Content */}
+          <div className="space-y-8">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full">
+              <span className="text-sm font-semibold text-appmax-purple-dark">
+                ✨ Confira a nova funcionalidade
               </span>
             </div>
-            
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-              PARE DE RESPONDER "ONDE ESTÁ MEU PEDIDO?"
+
+            {/* Main Headline */}
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
+              Mensagens Automatizadas de Rastreio via WhatsApp
             </h1>
-            
-            <p className="text-lg md:text-xl text-purple-50 max-w-2xl leading-relaxed">
-              O novo Rastreio Automático Appmax assume sua comunicação de pós-venda. 
-              Avise seus clientes proativamente sobre cada etapa da entrega direto no 
-              WhatsApp e transforme a ansiedade deles em fidelidade.
+
+            {/* Description */}
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+              O Rastreio Automático Appmax antecipa dúvidas, envia atualizações automáticas no WhatsApp 
+              e mostra ao cliente que sua marca se preocupa com cada detalhe da entrega. Mais eficiência 
+              para o seu time, mais confiança para o seu cliente.
             </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button 
-                size="lg" 
-                className="bg-primary hover:bg-appmax-purple-medium text-white font-semibold px-8 py-6 text-lg rounded-2xl shadow-2xl hover:scale-105 transition-all duration-300"
-              >
+
+            {/* CTAs */}
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button size="lg" className="bg-primary hover:bg-primary/90 px-8 py-6 text-lg rounded-xl">
                 CONHEÇA OS PLANOS
-                <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-2 border-white text-white hover:bg-white hover:text-appmax-purple-dark font-semibold px-8 py-6 text-lg rounded-2xl transition-all duration-300"
-              >
+              <Button size="lg" variant="outline" className="px-8 py-6 text-lg rounded-xl border-2">
+                <Play className="mr-2 h-5 w-5" />
                 VER DEMONSTRAÇÃO
               </Button>
             </div>
-            
+
             {/* Social Proof */}
-            <div className="flex items-center gap-4 justify-center lg:justify-start pt-4">
-              <div className="flex -space-x-2">
-                {[1, 2, 3, 4].map((i) => (
-                  <div key={i} className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-400 to-purple-600 border-2 border-white" />
-                ))}
-              </div>
-              <div className="text-white">
-                <div className="flex items-center gap-1">
-                  <CheckCircle2 className="h-5 w-5 text-green-400" />
-                  <span className="font-semibold">Mais de 5.000 empresas</span>
-                </div>
-                <p className="text-sm text-purple-200">já confiam na Appmax</p>
-              </div>
+            <div className="flex items-center gap-3 pt-4">
+              <CheckCircle2 className="h-5 w-5 text-green-600" />
+              <p className="text-muted-foreground">
+                <span className="font-bold text-foreground">Mais de 5.000 empresas</span> já confiam na Appmax
+              </p>
             </div>
           </div>
-          
-          {/* Mockup */}
-          <div className="relative lg:scale-110 flex justify-center">
-            <div className="relative w-full max-w-md">
-              {/* Efeito de glow */}
-              <div className="absolute inset-0 bg-gradient-to-r from-primary to-purple-400 rounded-[3rem] blur-3xl opacity-30 animate-pulse" />
-              
-              {/* iPhone Mockup */}
-              <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 rounded-[3rem] p-3 shadow-2xl border-4 border-gray-700">
-                <div className="bg-white rounded-[2.5rem] overflow-hidden">
-                  {/* Status bar */}
-                  <div className="bg-gradient-to-b from-purple-50 to-white px-6 py-3 flex justify-between items-center">
-                    <span className="text-xs font-semibold text-gray-700">9:41</span>
-                    <div className="flex gap-1">
-                      <div className="w-4 h-3 bg-gray-700 rounded-sm" />
-                      <div className="w-4 h-3 bg-gray-700 rounded-sm" />
-                      <div className="w-4 h-3 bg-gray-700 rounded-sm" />
-                    </div>
-                  </div>
-                  
-                  {/* WhatsApp notification */}
-                  <div className="p-6 space-y-4">
-                    <div className="bg-gradient-to-br from-purple-100 to-purple-50 rounded-3xl p-6 shadow-lg border border-purple-200">
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
-                          <CheckCircle2 className="h-6 w-6 text-white" />
-                        </div>
-                        <div>
-                          <div className="flex items-center gap-2">
-                            <span className="font-bold text-gray-900">Appmax</span>
-                            <CheckCircle2 className="h-4 w-4 text-green-500 fill-green-500" />
-                          </div>
-                          <span className="text-xs text-gray-500">WhatsApp Business</span>
-                        </div>
-                      </div>
-                      
-                      <p className="text-sm text-gray-700 leading-relaxed">
-                        🎉 Olá! Seu pedido <span className="font-bold">#12345</span> foi enviado!
-                      </p>
-                      <p className="text-sm text-gray-700 mt-2">
-                        📦 Código de rastreio: <span className="font-mono font-bold">BR123456789</span>
-                      </p>
-                      <p className="text-sm text-gray-500 mt-3">
-                        Previsão de entrega: 3-5 dias úteis
-                      </p>
-                    </div>
-                    
-                    <div className="bg-gradient-to-br from-green-100 to-green-50 rounded-3xl p-6 shadow-lg border border-green-200">
-                      <p className="text-sm text-gray-700 leading-relaxed">
-                        ✅ Ótimas notícias! Seu pedido está a caminho e chegará hoje.
-                      </p>
-                      <p className="text-xs text-gray-500 mt-2">Recebido às 14:32</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+
+          {/* Right Visual */}
+          <div className="relative lg:pl-12">
+            <div className="relative">
+              <img 
+                src={mockup} 
+                alt="WhatsApp tracking messages"
+                className="w-full max-w-md mx-auto drop-shadow-2xl"
+              />
             </div>
           </div>
+        </div>
+
+        {/* Platform Badges */}
+        <div className="mt-16 flex justify-center">
+          <img src={badges} alt="Platform badges" className="h-12 opacity-70" />
         </div>
       </div>
     </section>
